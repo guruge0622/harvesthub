@@ -1,0 +1,25 @@
+/* HarvestHub - simple theme */
+:root{
+  --green:#2E7D32;
+  --light-green:#A5D6A7;
+  --cream:#FFF8E1;
+  --brown:#6D4C41;
+}
+body{background:var(--cream);color:#222;font-family:Arial,Helvetica,sans-serif}
+.navbar-brand{color:var(--green)!important;font-weight:700}
+.product-card img{width:100%;height:180px;object-fit:cover}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card-feature{border:1px solid rgba(0,0,0,0.05);padding:1rem;background:#fff}
+.hero{background:linear-gradient(90deg,var(--light-green),#fff);padding:3rem;border-radius:8px;margin-bottom:1rem}
+.site-footer{background:transparent}
+.btn-primary{background:var(--green);border:0}
+.badge-accent{background:var(--brown);color:#fff;padding:.25rem .5rem;border-radius:.25rem}
+.bg-cream{background:var(--cream)}
+.farm-card img{width:120px;height:120px;object-fit:cover;border-radius:50%}
+.form-control:focus{box-shadow:0 0 0 .2rem rgba(46,125,50,.25)}
+
+/* responsive tweaks */
+@media(max-width:576px){.hero{padding:1rem}}
+
+/* simple utility */
+.muted{color:#666}

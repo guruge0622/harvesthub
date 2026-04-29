@@ -1,6 +1,8 @@
 <?php
 // Very small admin area (no auth) for demonstration only
 require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/admin.php';
+admin_require_login();
 include __DIR__ . '/../includes/header.php';
 
 // delete

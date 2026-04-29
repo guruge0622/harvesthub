@@ -1,0 +1,18 @@
+# Ignore common OS/editor files
+.DS_Store
+Thumbs.db
+
+# Ignore image assets (optional - images already in repo remain)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+
+# Logs and env
+*.log
+.env
+
+# Node / vendor
+node_modules/
+vendor/

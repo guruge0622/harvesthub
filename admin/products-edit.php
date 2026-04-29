@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '/../includes/db.php'; include __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/admin.php';
+admin_require_login();
+include __DIR__ . '/../includes/header.php';
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if ($_SERVER['REQUEST_METHOD']==='POST'){
   $name = $mysqli->real_escape_string($_POST['name']);

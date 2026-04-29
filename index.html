@@ -62,369 +62,117 @@
         <div class="list">
  <!--SEPARATE IMAGE CONTENT -->
             <div class="item" style="background-image: url(img2.jpg);">
-                <div class="content">
-                    <div class="title"></div>
-                    <div class="name">Farm-Fresh Goodness</div>
-                    <div class="des">Experience the true taste of nature with our handpicked, farm-fresh vegetables, fruits, and greens delivered straight to your doorstep..</div>
-                    <div class="btn">
-                       
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>HarvestHub – Farm Produce Marketplace</title>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+                <style>
+                    :root {
+                        --green: #3a7d44;
+                        --green-dark: #2c5f34;
+                        --green-light: #5aaa65;
+                        --orange: #e07b2a;
+                        --orange-light: #f5a623;
+                        --cream: #faf7f0;
+                        --brown: #4a3728;
+                        --text: #2d2d2d;
+                        --muted: #6b6b6b;
+                        --white: #ffffff;
+                        --shadow: 0 4px 24px rgba(0,0,0,0.10);
+                    }
+                    * { margin: 0; padding: 0; box-sizing: border-box; }
+                    body { font-family: 'Nunito', sans-serif; color: var(--text); background: var(--cream); scroll-behavior: smooth; }
+
+                    nav { position: sticky; top: 0; z-index: 100; background: var(--green-dark); display:flex; align-items:center; justify-content:space-between; padding:0 28px; height:64px; box-shadow:0 2px 12px rgba(0,0,0,0.12); }
+                    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #fff; }
+                    .nav-links { display:flex; gap:18px; list-style:none; }
+                    .nav-links a { color: rgba(255,255,255,0.9); text-decoration:none; font-weight:600; }
+                    .nav-actions { display:flex; gap:10px; align-items:center; }
+                    .btn-nav { padding:7px 14px; border-radius:20px; font-weight:700; border:none; cursor:pointer; }
+                    .btn-outline { background:transparent; border:2px solid rgba(255,255,255,0.18); color:#fff }
+                    .btn-fill { background:var(--orange); color:#fff }
+
+                    section{padding:64px 28px}
+                    .hero{min-height:420px;background:linear-gradient(120deg,rgba(44,95,52,0.82) 0%,rgba(74,55,40,0.55) 60%,transparent 100%),url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=80') center/cover no-repeat;display:flex;align-items:center;padding:60px 28px}
+                    .btn-primary{background:var(--orange);color:#fff;padding:12px 28px;border-radius:28px;border:none}
+
+                </style>
+                </head>
+                <body>
+
+                <!-- NAV -->
+                <nav>
+                    <div class="nav-logo">Harvest<span style="color:var(--orange)">Hub</span></div>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.php">Products</a></li>
+                        <li><a href="farmers.php">Farmers</a></li>
+                        <li><a href="loyalty.html">Loyalty</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="login.php" class="btn-nav btn-outline">Login</a>
+                        <a href="sign up.html" class="btn-nav btn-fill">Register</a>
+                        <a href="cart.php" class="btn-nav" style="color:#fff;">🛒</a>
                     </div>
-                </div>
-            </div>
-<!--SEPARATE IMAGE CONTENT -->
-            <div class="item" style="background-image: url(img5.jpg);">
-                
-                <div class="content">
-                    <div class="title"></div>
-                    <div class="name">Organic & Natural Choices</div>
-                    <div class="des">Transform your meals with our premium dairy products, sourced from trusted farms to ensure freshness and quality in every drop.</div>
-                    <div class="btn">
-                       
+                </nav>
+
+                <!-- Inserted homepage content (copied from harvesthub_fragment.html) -->
+                <section id="home" class="hero">
+                    <div class="hero-content">
+                        <div class="hero-badge">🌿 Farm Fresh Since 2024</div>
+                        <h1 style="font-family:'Playfair Display',serif;color:#fff;font-size:2.8rem;">Organic &<br><span style="color:var(--orange)">Natural</span><br>Choices</h1>
+                        <p style="color:rgba(255,255,255,0.9);max-width:520px;margin-top:12px;">Connect directly with local farmers. Get the freshest fruits, vegetables, grains, and dairy products delivered straight from the farm to your table.</p>
+                        <div style="margin-top:20px;"><a class="btn-primary" href="products.php">Shop Now</a></div>
                     </div>
-                </div>
+                </section>
 
-            </div>
-<!--SEPARATE IMAGE CONTENT -->
-            <div class="item" style="background-image: url(img1.jpg);">
+                <section class="deals-bg">
+                    <h3>Super Deals</h3>
+                    <div id="dealsScroll" style="display:flex;gap:12px;overflow:auto;margin-top:12px;"></div>
+                </section>
 
-                <div class="content">
-                    <div class="title"></div>
-                    <div class="name">Healthy Living Starts Here</div>
-                    <div class="des">Discover the goodness of wholesome grains and legumes that are perfect for creating nourishing and delicious dishes for your family. </div>
-                    <div class="btn">
-                        
+                <section class="categories-bg">
+                    <h3>Shop by Category</h3>
+                    <div id="catGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;margin-top:12px;"></div>
+                </section>
+
+                <section class="products-bg">
+                    <h3>Explore Our Products</h3>
+                    <div id="productGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:12px;"></div>
+                </section>
+
+                <section class="about-bg">
+                    <h3>About HarvestHub</h3>
+                    <p style="max-width:700px;margin-top:10px;">HarvestHub was born from a simple idea: bridge the gap between hardworking local farmers and conscious consumers who want fresh, honest food.</p>
+                </section>
+
+                <footer style="background:var(--brown);color:#fff;padding:40px 28px;margin-top:24px;">
+                    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+                        <div style="flex:1;min-width:220px;"><h4>HarvestHub</h4><p>Connecting farmers and consumers for a fresher, fairer food system.</p></div>
+                        <div style="min-width:200px;"><h4>Links</h4><ul style="list-style:none;padding:0"><li><a href="index.html" style="color:#fff">Home</a></li><li><a href="products.php" style="color:#fff">Products</a></li></ul></div>
                     </div>
-                </div>
+                </footer>
 
-            </div>
-<!--SEPARATE IMAGE CONTENT -->
-            <div class="item" style="background-image: url(img77.jpg);">
-                
-                <div class="content">
-                    <div class="title"></div>
-                    <div class="name">Freshly Picked, Just for You</div>
-                    <div class="des">"Enjoy the unbeatable flavor of farm-fresh eggs, laid with care and packed with natural nutrients to power your day."</div>
-                    <div class="btn">
-                       
-                    </div>
-                </div>
+                <!-- Minimal JS: populate demo data and enable cart badge -->
+                <script>
+                const deals = [
+                    { name: 'Organic Apples', tag: '30% OFF', price: '$2.99/kg', img: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&q=70' },
+                    { name: 'Fresh Tomatoes', tag: '25% OFF', price: '$1.49/kg', img: 'https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=400&q=70' }
+                ];
+                const products = [
+                    { id:1, name:'Organic Red Apples', farmer:'Sunridge Farm', price:2.99, unit:'kg', img:'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&q=70' },
+                    { id:2, name:'Fresh Broccoli', farmer:'Valley Greens', price:1.49, unit:'head', img:'https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=400&q=70' }
+                ];
+                const dealsCont = document.getElementById('dealsScroll');
+                deals.forEach(d=>{ const el=document.createElement('div'); el.style.minWidth='200px'; el.style.borderRadius='12px'; el.style.overflow='hidden'; el.innerHTML=`<img src="${d.img}" style="width:100%;height:120px;object-fit:cover"><div style="padding:8px"><strong>${d.name}</strong><div style="color:var(--orange)">${d.tag}</div></div>`; dealsCont.appendChild(el); });
+                const grid = document.getElementById('productGrid');
+                products.forEach(p=>{ const card=document.createElement('div'); card.style.background='#fff'; card.style.borderRadius='12px'; card.style.padding='12px'; card.innerHTML=`<img src="${p.img}" style="width:100%;height:140px;object-fit:cover;border-radius:8px"><h4 style="margin-top:8px">${p.name}</h4><p style="color:var(--muted)">by ${p.farmer}</p><div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><strong>$${p.price.toFixed(2)}</strong><a href="cart.php?action=add&id=${p.id}" class="btn-primary">Add</a></div>`; grid.appendChild(card); });
+                </script>
 
-            </div>
-<!--SEPARATE IMAGE CONTENT -->
-            <div class="item" style="background-image: url(img3.jpg);">
-                
-                <div class="content">
-                    <div class="title"></div>
-                    <div class="name"> Bakery Delights</div>
-                    <div class="des">Indulge in the heavenly aroma of our artisan bakery items, baked daily to perfection using the finest ingredients.</div>
-                    
-                        
-                    </div>
-                </div>
-
-            </div>
-<!--SEPARATE IMAGE CONTENT -->
-            <div class="item" style="background-image: url(img4.jpg);">
-                
-                <div class="content">
-                    <div class="title"></div>
-                    <div class="name"> Quality Ingredients</div>
-                    <div class="des">Delight in our specialty foods, crafted to bring exotic and unforgettable flavors right to your kitchen.</div>
-                    
-                        
-                    </div>
-                </div>
-
-            </div>            
-        </div>
-
-
-<!--END OF SLIDING IMAGES -->
-<!--BUTTION FOR NEXT AND PREVIOUS-->
-<div class="arrows">
-    <button class="prev"></button>
-    <button class="next">></button>
-</div>
-
-
-<!--RUNING TIME OF THE IMAGE -->
-<div class="timeRunning"></div>
-
-</div>
-
-<script src="app.js"></script>
-<BR>
-<BR>
-    <br>
-    <br>
-<section class="promotion">
-    <h1>Supper Deals</h1>
-    <div class="card">
-        <div class="face front">
-            <img src="img1.jpg" alt="">
-            <h3><font color="yellow">Super Deals </font> 10%<sub>off</sub></h3>
-        </div>
-        <div class="face back">
-            <h3>Peanuts</h3>
-            <p>Peanuts are rich in healthy fats, protein, and vitamins.</p> <h5>LKR <strike>450</strike> /1kg</h5><h1>LKR 425</h1>
-            <div class="link">
-                <a href="#">Add to Cart</a>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="face front">
-            <img src="img2.jpg" alt="">
+                </body>
+                </html>
             <h3><font color="yellow">Super Deals </font> 5%<sub>off</sub></h3>
-        </div>
-        <div class="face back">
-            <h3>Yogurt</h3>
-            <p>A fresh herb with a citrusy flavor, essential for curries, chutneys, and salads.</p>
-            <h5>LKR <strike>250</strike> /500ml</h5><h1>LKR 210</h1>
-            <div class="link">
-                <a href="#">Add to Cart</a>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="face front">
-            <img src="img3.jpg" alt="">
-            <h3><font color="yellow">Super Deals </font> 8%<sub>off</sub></h3>
-        </div>
-        <div class="face back">
-            <h3>Tomato</h3>
-            <p>Juicy and ripe tomatoes, great for salads, sauces, and curries.</p>
-            <h5>LKR <strike>120</strike> /1kg</h5><h1>LKR 80</h1>
-            <div class="link">
-                <a href="#">Add to Cart</a>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="face front">
-            <img src="img4.jpeg" alt="">
-            <h3><font color="yellow">Super Deals </font> 12%<sub>off</sub></h3>
-        </div>
-        <div class="face back">
-            <h3>Bagels</h3>
-            <p>Chewy, golden bagels available plain or with toppings like sesame or poppy seeds.</p>
-            <h5>LKR <strike>300</strike> /1piece</h5><h1>LKR 150</h1>
-            <div class="link">
-                <a href="#">Add to Cart</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="face front">
-            <img src="img5.jpeg" alt="">
-            <h3><font color="yellow">Super Deals </font> 4%<sub>off</sub></h3>
-        </div>
-        <div class="face back">
-            <h3>Cilantro</h3>
-            <p>A fresh herb with a citrusy flavor, essential for curries, chutneys, and salads.</p>
-        <h5>LKR <strike>100</strike> /100g</h5><h1>LKR 70</h1>
-            <div class="link">
-                <a href="#">Add to Cart</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="face front">
-            <img src="img6.jpg" alt="">
-            <h3><font color="yellow">Super Deals </font> 8%<sub>off</sub></h3>
-        </div>
-        <div class="face back">
-            <h3>Banana</h3>
-            <p>Naturally ripened and rich in nutrients, these bananas are perfect for energy boosts.</p>
-        <h5>LKR <strike>1200</strike> /1kg</h5><h1>LKR 1112</h1>
-            <div class="link">
-                <a href="#">Add to Cart</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="face front">
-            <img src="img7.jpg" alt="">
-            <h3><font color="yellow">Super Deals </font> 14%<sub>off</sub></h3>
-        </div>
-        <div class="face back">
-            <h3>Strawberry freezer jam</h3>
-            <p>Fresh strawberries mashed and sweetened, then preserved without cooking for a vibrant, fruity taste.
-            </p><h5>LKR <strike>700</strike> /250g</h5><h1>LKR 500</h1>
-            
-            <div class="link">
-                <a href="#">Add to Cart</a>
-            </div>
-        </div>
-    </div>
-
-    
-
-</section>
-
-
-
-
-    
-
-    <!-- product-categories Section -->
-    <section class="product-categories">
-    <h2>Explore Our Products</h2>
-    <div class="product-grid">
-        <!-- Fresh Fruits -->
-        <div class="product-category">
-            <img src="18.jpg" alt="Fresh Fruits">
-            <h3>Fresh Fruits</h3>
-            <p>Juicy and delicious fruits, picked at the peak of ripeness.</p>
-            <a href="fruits.html" class="btn">Shop Now</a>
-        </div>
-        <!-- Vegetables -->
-        <div class="product-category">
-            <img src="9.jpg" alt="Vegetables">
-            <h3>Vegetables</h3>
-            <p>Nutritious and fresh vegetables for a healthy diet.</p>
-            <a href="vegetables.html" class="btn">Shop Now</a>
-        </div>
-        <!-- Herbs & Greens -->
-        <div class="product-category">
-            <img src="3.jpg" alt="Herbs & Greens">
-            <h3>Herbs & Greens</h3>
-            <p>Fresh herbs and greens to enhance your dishes.</p>
-            <a href="greens.html" class="btn">Shop Now</a>
-        </div>
-        <!-- Grains & Legumes -->
-        <div class="product-category">
-            <img src="25.jpg" alt="Grains & Legumes">
-            <h3>Grains & Legumes</h3>
-            <p>Essential staples for your pantry.</p>
-            <a href="grains.html" class="btn">Shop Now</a>
-        </div>
-         <!-- Dairy Products -->
-         <div class="product-category">
-            <img src="8.jpg" alt="Dairy Products">
-            <h3>Dairy Products</h3>
-            <p>Fresh milk, cheese, and butter straight from the farm.</p>
-            <a href="dairy.html" class="btn">Shop Now</a>
-        </div>
-        <!-- Eggs -->
-        <div class="product-category">
-            <img src="13.jpg" alt="Eggs">
-            <h3>Farm-Fresh Eggs</h3>
-            <p>Free-range eggs with rich taste and quality.</p>
-            <a href="eggs.html" class="btn">Shop Now</a>
-        </div>
-        <!-- Bakery Items -->
-        <div class="product-category">
-            <img src="2.jpg" alt="Bakery Items">
-            <h3>Bakery Items</h3>
-            <p>Freshly baked bread, pastries, and more.</p>
-            <a href="bakery.html" class="btn">Shop Now</a>
-        </div>
-        <!-- Jams & Preserves -->
-        <div class="product-category">
-            <img src="20.jpg" alt="Jams & Preserves">
-            <h3>Jams & Preserves</h3>
-            <p>Handmade jams and preserves from local farms.</p>
-            <a href="jams.html" class="btn">Shop Now</a>
-        </div>
-        <!-- Specialty Foods -->
-        <div class="product-category">
-            <img src="11.jpg" alt="Specialty Foods">
-            <h3>Specialty Foods</h3>
-            <p>Organic sauces, pickles, dried fruits, and more.</p>
-            <a href="Specialty.html" class="btn">Shop Now</a>
-        </div>
-        
-        
-    </div>
-</section>
-
-<section class="harvesthub-loyalty" id="harvesthub-loyalty">
-   <div class="loyalty-bg">
-    <div class="center-heading">
-    <h1> Not a HarvestHub Loyalty Member?</h1><br>
-    <p>Click here to Registraton Online.</p>
-
-
-    <a href="loyalty.html" class="btn">Register</a>
-    </div>
-   </div>
-
-</section>
-
-
-    <!-- About Us Section -->
-    <section class="about-us" id="about-us">
-        <div class="about-container">
-            <div class="about-text">
-                <h2>About HarvestHub</h2>
-                <p>At HarvestHub, we bridge the gap between farmers and consumers by offering a simple, direct way to buy and sell fresh, local produce. Our mission is to support sustainable agriculture while providing consumers with high-quality, organic products directly from the source.</p>
-                <p>Founded in 2024, we’ve helped countless farmers connect with communities, offering seasonal fruits, vegetables, grains, and more. Whether you're looking for farm-fresh eggs, dairy products, or handmade jams and preserves, HarvestHub ensures every product meets our high standards of quality and freshness.</p>
-                <p>Join us in supporting local farms and enjoying the freshest products available. Together, we can promote sustainability and healthy living.</p>
-            </div>
-            <div class="about-image">
-                <img src="26.jpg" alt="Farmers at work">
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="aboutus.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p>Email: support@harvesthub.com</p>
-                <p>Phone: +94 77 123 4567</p>
-                <p>Address: 123 Harvest Street, Rajagiriya, Sri Lanka</p>
-            </div>
-           
-            <div class="footer-social">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com" target="blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://gmail.google.com" target="blank"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="https://instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="row">
-                
-                <div class="col-lg-4 col-md-4 col-12 mx-auto Copyright">
-                    <h4><span id="Name">HarvestHub</span> © Privacy Policy</h4>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 mx-auto Copyright">
-                    <h4>Design & Developed by <span id="Name">Group 8.</span></h3>
-                </div>
-            </div>
-           
-        </div>
-    </footer>
-    
-    <script>
-        function toggleDropdown() {
-            var dropdown = document.getElementById("dropdown-content");
-            if (dropdown.style.display === "block") {
-                dropdown.style.display = "none";
-            } else {
-                dropdown.style.display = "block";
-            }
-        }
-    </script>
-
-</body>
-</html>

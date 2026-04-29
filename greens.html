@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title> Herbs & Greens | HarvestHub</title>
+    <style>
+        body  {
+              font-family: 'Fira Sans', sans-serif;
+              background-color: #F5F5F5; 
+              margin: 0;
+              padding: 0;
+              color: #333333; 
+            }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8ac755;
+    color: #FFFFFF; 
+    padding: 15px;
+    
+}
+
+header .logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    
+    padding: 15px;
+}
+
+nav ul li a:hover {
+    color: #333333;
+}
+
+/* Dropdown button */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+/* Align dropdown icon */
+.dropbtn i {
+    margin-left: 5px;
+    cursor: pointer;
+}
+       
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-info {
+            margin-top: 15px;
+        }
+        .product-info h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #333333;
+        }
+        .product-info p {
+            color: #666;
+            font-size: 14px;
+        }
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00840b;
+        }
+        .buy-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .buy-btn:hover {
+            background-color: #1a6a20f6;
+            color: #333333;
+        }
+        .cart-btn {
+            background-color: #efd50d;
+            color: rgb(3, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .cart-btn:hover {
+            background-color: #f0830e;
+            color: #333333;
+        }
+        
+        /* footer*/
+.footer h3{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+.footer p{
+    font-size: 15px;
+    color: rgba(0,0,0,0.5);
+    font-weight: lighter;
+    padding: 0 10px;
+}
+.footer i{
+    padding: 10px;
+    font-size: 22px;
+    color: rgba(0,0,0,0.8);
+    transition: 0.6s;
+}
+.footer i:hover{
+    color: #122b2e;
+}
+
+.Copyright h4{
+    font-size: 18px;
+    line-height: 100px;
+}
+#Name{
+    color: rgba(0,0,0,0.8);
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>HarvestHub</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+               
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Our Products<i class="fas fa-caret-down" onclick="toggleDropdown()"></i></a>
+                    <div id="dropdown-content" class="dropdown-content">
+                        <a href="fruits.html">Fruits</a>
+                        <a href="vegetables.html">Vegetables</a>
+                        <a href="#">Herbs & Greens</a>
+                        <a href="#">Grains & Legumes</a>
+                        <a href="#">Dairy Products</a>
+                        <a href="#">Farm-Fresh Eggs</a>
+                        <a href="#">Bakery items</a>
+                        <a href="#">Jams & Preserves</a>
+                        <a href="#">Specialty Foods</a>
+                        <a href="#">Seasonal Picks</a>
+                        <a href="#">Farm Products</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1> Our HarvestHub Herbs & Greens Products </h1>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="hg1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Basil</h3>
+                    <p>A fragrant herb with a sweet, peppery flavor, perfect for Italian dishes like pasta and pizza.</p>
+                    <span class="product-price">LKR 150/100g</span>
+                    <br>
+                    <a href="#" class="buy-btn">Buy Now</a>
+                    <br>
+                    <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="hg2.jpeg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Chives</h3>
+                    <p>Delicate onion-flavored herb, great for garnishing soups, salads, and dips.</p>
+                    <span class="product-price">LKR 120/100g</span>
+                    <br>
+                    <a href="#" class="buy-btn">Buy Now</a>
+                    <br>
+                    <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="hg3.jpeg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Cilantro</h3>
+                    <p>A fresh herb with a citrusy flavor, essential for curries, chutneys, and salads.</p>
+                    <span class="product-price">LKR 100/100g</span>
+                    <br>
+                    <a href="#" class="buy-btn">Buy Now</a>
+                    <br>
+                    <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="hg4.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Mint</h3>
+                    <p>A refreshing herb with a cooling flavor, used in teas, desserts, and savory dishes.</p>
+                    <span class="product-price">LKR 100/100g</span>
+                    <br>
+                    <a href="#" class="buy-btn">Buy Now</a>
+                    <br>
+                    <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="hg5.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Oregano</h3>
+                    <p>An aromatic herb with a slightly bitter taste, perfect for Mediterranean cuisine.</p>
+                    <span class="product-price">LKR 130/100g</span>
+                    <br>
+                    <a href="#" class="buy-btn">Buy Now</a>
+                    <br>
+                    <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+            <!-- Product 6-->
+            <div class="product-card">
+                <img src="hg6.jpeg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Rosemary</h3>
+                    <p>A robust, piney-flavored herb ideal for roasts, stews, and bread.</p>
+                    <span class="product-price"> LKR 150/100g</span>
+                    <br>
+                    <a href="#" class="buy-btn">Buy Now</a>
+                    <br>
+                    <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img src="hg7.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Marjoram</h3>
+                    <p>A milder, sweeter alternative to oregano, commonly used in soups and sauces.</p>
+                    <span class="product-price">LKR 140/100g</span>
+                    <br>
+                    <a href="#" class="buy-btn">Buy Now</a>
+                    <br>
+                    <a href="#" class="cart-btn">Add to cart</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <section class="footer" id="footerid">
+   
+        <!--devo-->
+    
+        <hr class="w-50 mt-5 mx-auto text-dark">
+        <div class="container last-footer" >
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-12 mx-auto Copyright">
+                    <h4 id="last-logo">HarvestHub</h4> 
+                </div>
+                <div class="col-lg-4 col-md-4 col-12 mx-auto Copyright">
+                    <h4><span id="Name">HarvestHub</span> © Privacy Policy</h4>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12 mx-auto Copyright">
+                    <h4>Developed by <span id="Name">Group 8.</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdown-content");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+    </script>
+    
+</body>
+</html>
